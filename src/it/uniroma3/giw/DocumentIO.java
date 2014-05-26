@@ -6,6 +6,7 @@ import java.util.Properties;
 
 public class DocumentIO {
 	private String id2urlSport;
+	private String csvpath;
 	
 	public DocumentIO(){
 		Properties conf = new Properties();
@@ -20,6 +21,7 @@ public class DocumentIO {
 		}		
 
 		this.setId2urlSport(conf.getProperty("id2urlSport-path"));
+		this.setCsvpath(conf.getProperty("csv-path"));
 	}
 
 	public String getId2urlSport() {
@@ -30,6 +32,14 @@ public class DocumentIO {
 		this.id2urlSport = id2urlSport;
 	}
 
+	public String getCsvpath() {
+	    return csvpath;
+	}
+
+	public void setCsvpath(String csvpath) {
+	    this.csvpath = csvpath;
+	}
+	
 	
 	
 	

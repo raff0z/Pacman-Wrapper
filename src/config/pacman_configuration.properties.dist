@@ -1,2 +1,3 @@
-//Add multiple line of this config
+#Add multiple line of this config
 id2urlSport-path = ID2URLPATH
+csv-path = CSVPATH
