@@ -1,5 +1,7 @@
 package it.uniroma3.giw;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -40,7 +42,19 @@ public class DocumentIO {
 	    this.csvpath = csvpath;
 	}
 	
-	
-	
+	public void cleanPath() {
+		File dir = new File(this.csvpath);
+		if (dir.exists())
+			deleteFolder(dir);
+		dir.mkdir();
+	}
+
+	private void deleteFolder(File d) {
+		for(File f : d.listFiles()) {
+			if(!f.isFile())
+				deleteFolder(f);
+			f.delete();		
+		}
+	}
 	
 }

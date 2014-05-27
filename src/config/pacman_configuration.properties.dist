@@ -1,3 +1,5 @@
-#Add multiple line of this config
 id2urlSport-path = ID2URLPATH
+id2urlMovie-path = ID2URLPATH
+id2urlNews-path = ID2URLPATH
+id2urlGames-path = ID2URLPATH
 csv-path = CSVPATH
