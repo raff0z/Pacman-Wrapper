@@ -1,6 +1,7 @@
 package it.uniroma3.giw;
 
 import it.uniroma3.giw.wrapper.Wrapper;
+import it.uniroma3.giw.wrapper.WrapperMyMovies;
 import it.uniroma3.giw.wrapper.WrapperTuttoMercatoWeb;
 
 public class Main {
@@ -10,6 +11,9 @@ public class Main {
 		
 		Wrapper wrapperTuttoMercatoWeb = new WrapperTuttoMercatoWeb();
 		wrapperTuttoMercatoWeb.doWrapping(docio.getId2urlSport());
+		
+		Wrapper wrapperMyMovies = new WrapperMyMovies();
+		wrapperMyMovies.doWrapping(docio.getId2urlMovies());
 	}
 
 }

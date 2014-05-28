@@ -22,14 +22,25 @@ public class WrapperTuttoMercatoWeb extends Wrapper{
 	public String[] getRowCSV(HtmlPage page) {
 
 		String title = page.getTitleText();
-		DomAttr img = page.getFirstByXPath("//img/@src[contains(.,'jpg') or contains(.,'jpeg')]");
-		HtmlAnchor anchor = (HtmlAnchor) page.getByXPath("//*[contains(@class, 'correlati')]/li/a").get(0);
+		
+		String img = null;
+		DomAttr imgDomAttr = page.getFirstByXPath("//img/@src[contains(.,'jpg') or contains(.,'jpeg')]");
+		if(imgDomAttr != null) {
+			img = imgDomAttr.getValue();
+		}
+		
+		String link = null;
+		HtmlAnchor anchor = (HtmlAnchor) page.getFirstByXPath("//*[contains(@class, 'correlati')]/li/a");
+		if(anchor != null) {
+			link = anchor.getHrefAttribute();
+		}
 
 		String[] idArray = page.getUrl().toString().split("/");
 
 		String id = idArray[idArray.length-1]; 
 
-		String[] elementRow = {id,title,img.getValue(),anchor.getHrefAttribute()};
+		
+		String[] elementRow = {id,title,img,link};
 
 		System.out.println(title);
 
