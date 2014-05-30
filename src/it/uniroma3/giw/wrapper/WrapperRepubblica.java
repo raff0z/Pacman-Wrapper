@@ -63,6 +63,9 @@ public class WrapperRepubblica extends Wrapper {
 				lastPosition = null;
 		}
 		String[] elementRow = {id,title,lastPosition};
+		
+		System.out.println(title);
+		
 		return elementRow;
 	}
 }
